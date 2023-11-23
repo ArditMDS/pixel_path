@@ -7,19 +7,18 @@ import Form from "../../components/Form";
 import {ContainerDivWheel, ContainerWheel, Message, Wheel} from "./style";
 import Slice from "../../components/Slice";
 import SpinButton from "../../components/SpinButton";
-import ButtonSubmit from "../../components/ButtonSubmit";
 
 function Homepage() {
     const [data, setData] = useState([]);
     const [count, setCount] = useState(0);
     const [rotation, setRotation] = useState(0);
     useEffect(() => {
-        const storedData = localStorage.getItem('Data');
-        setCount(data.length)
-        // Parse the JSON data if needed
-        const parsedData = JSON.parse(storedData);
-        // Set the state with the retrieved data
-        setData(parsedData || []);
+        if(localStorage.getItem('Data')) {
+            const storedData = localStorage.getItem('Data');
+            setCount(data.length)
+            const parsedData = JSON.parse(storedData);
+            setData(parsedData || []);
+        }
     }, [data.length]);
 
     const handleSubmit = (playerName) => {
@@ -29,11 +28,6 @@ function Homepage() {
             localStorage.setItem('Data', JSON.stringify(newData));
         }
     };
-
-    const resetHandle = () => {
-        // Remove a specific item from local storage
-        localStorage.removeItem('Data');
-    }
 
     const handleClick = () => {
         const randomRotation = Math.floor(Math.random() * 3600) + 720; // Rotate at least two full circles
@@ -47,9 +41,7 @@ function Homepage() {
                 Welcome on our random first player selector ! Write down all the players name and then click on the wheel to start the random selection.
             </NormalText>
             <ContainerWheel>
-                <Form onSubmit={handleSubmit} />
-                <ButtonSubmit type="reset" onClick={resetHandle}>Reset</ButtonSubmit>
-
+                <Form setData={setData} onSubmit={handleSubmit} />
                 <ContainerDivWheel>
                     <SpinButton onClick={handleClick}>Spin</SpinButton>
                     <Wheel rotate={rotation}>

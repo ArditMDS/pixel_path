@@ -1,9 +1,9 @@
 import React from "react";
-import {ButtonStyle} from "./style";
+import {ResetStyle} from "./style";
 
-function ButtonSubmit({children, type}) {
+function ResetButton({children, onClick}) {
     return (
-        <ButtonStyle type={type}>{children}</ButtonStyle>
+        <ResetStyle onClick={onClick}>{children}</ResetStyle>
     );
 }
-export default ButtonSubmit;
+export default ResetButton;

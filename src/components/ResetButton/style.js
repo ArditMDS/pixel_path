@@ -1,9 +1,12 @@
-import React from "react";
-import {ButtonStyle} from "./style";
+import styled from "styled-components";
 
-function ResetButton({children, onClick}) {
-    return (
-        <ButtonStyle onClick={onClick}>{children}</ButtonStyle>
-    );
-}
-export default ResetButton;
+export const ResetStyle = styled.button `
+  color: white;
+  background-color: black;
+  border: 5px solid white;
+  cursor: pointer;
+  margin-top: 50px;
+  height: 70px;
+  width: 30%;
+  padding: 0;
+`
