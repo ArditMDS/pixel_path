@@ -5,6 +5,7 @@ export const ContainerWheel = styled.div `
   justify-content: space-around;
   @media (max-width: 900px) {
     flex-direction: column;
+    gap: 50px;
   }
 `
 
