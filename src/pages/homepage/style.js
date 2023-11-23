@@ -1,0 +1,30 @@
+import styled from "styled-components";
+
+export const ContainerWheel = styled.div `
+  display: flex;
+  justify-content: space-around;
+`
+
+export const Wheel = styled.div `
+  position: relative;
+  height: 500px;
+  width: 500px;
+  background-color: white;
+  border-radius: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(${(props) => props.rotate}deg);
+  transition: transform 5s ease-in-out;
+`
+
+export const ContainerDivWheel = styled.div `
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+`
+export const Message = styled.div `
+  margin-bottom: 50%;
+`

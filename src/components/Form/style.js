@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 export const FormStyle = styled.form `
-    width: 100%;
+    width: 50%;
     display: flex;
-    align-items: flex-end;
+    margin-top: 100px;
+    align-items: flex-start;
     flex-direction: column;
     
 `
