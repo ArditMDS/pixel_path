@@ -9,7 +9,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={homepage()}></Route>
+        <Route path="/acceuil" element={homepage()}></Route>
         <Route path="/list" element={list()}></Route>
       </Routes>
     </Router>
