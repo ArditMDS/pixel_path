@@ -3,6 +3,9 @@ import styled from "styled-components";
 export const ContainerWheel = styled.div `
   display: flex;
   justify-content: space-around;
+  @media (max-width: 900px) {
+    flex-direction: column;
+  }
 `
 
 export const Wheel = styled.div `
@@ -17,6 +20,11 @@ export const Wheel = styled.div `
   align-items: center;
   transform: rotate(${(props) => props.rotate}deg);
   transition: transform 5s ease-in-out;
+  @media (max-width: 768px) {
+    height: 300px;
+    width: 300px;
+  }
+  
 `
 
 export const ContainerDivWheel = styled.div `

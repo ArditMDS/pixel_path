@@ -12,4 +12,7 @@ export const InputStyle = styled.input `
     color: white;
     font-size: 20px;
   }
+  @media (max-width: 768px) {
+    width: 90%;
+  }
 `
